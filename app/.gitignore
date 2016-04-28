@@ -1,4 +1,7 @@
-idea
+.idea
+
 *.pyc
+
 *.pyo
+
 *.mo

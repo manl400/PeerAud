@@ -22,12 +22,12 @@ def showSignUp():
 def signup():
     email = None
     if request.method == 'POST':
-        user_name = request.form['inputName']
+        real_name = request.form['inputName']
         email = request.form['inputEmail']
         user_password = request.form['inputPassword']
         # Check that email does not already exist (not a great query, but works)
-        if not db.session.query(User).filter(User.user_name == email).count():
-            reg = User(email, user_name, user_password)
+        if not db.session.query(User).filter(User.user_email == email).count():
+            reg = User(email, real_name, user_password)
             db.session.add(reg)
             db.session.commit()
             return render_template('index.html')

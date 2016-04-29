@@ -5,11 +5,11 @@ from app import app
 class User(db.Model):
     __tablename__ = "users"
     user_id = db.Column(db.Integer, primary_key=True)
-    user_name = db.Column(db.String(120))
-    user_username = db.Column(db.String(120))
+    user_email = db.Column(db.String(120))
+    user_realname = db.Column(db.String(120))
     user_password = db.Column(db.String(120))
 
-    def __init__(self, user_name, user_username, user_password):
-        self.user_name = user_name
-        self.user_username = user_username
+    def __init__(self, user_email, user_realname, user_password):
+        self.user_email = user_email
+        self.user_realname = user_realname
         self.user_password = user_password
